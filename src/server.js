@@ -17,10 +17,10 @@ const startServer = async () => {
     await connectDB();
 
     // 2. Start Express server only after successful database connection
-    const server = app.listen(PORT, () => {
+    const server = app.listen(PORT, "0.0.0.0", () => {
       console.log(
-        `[Server] NearbyMosque backend running in ${process.env.NODE_ENV || "development"} mode on http://localhost:${PORT}`
-      );
+  `[Server] NearbyMosque backend running on port ${PORT} in ${process.env.NODE_ENV} mode`
+     );
     });
 
     // Handle unhandled promise rejections
